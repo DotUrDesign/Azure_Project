@@ -1,0 +1,9 @@
+{
+	"name": "azure-project-df-prats",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "f83da55f-01b0-43ab-aca7-14b4e1695f2d",
+		"tenantId": "ac9e7d1c-bfe9-421d-8e8a-dbe675913197"
+	}
+}
