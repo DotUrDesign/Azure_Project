@@ -68,10 +68,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"container": "bronze",
-							"folder": {
-								"value": "@pipeline().parameters.cdc_col",
-								"type": "Expression"
-							},
+							"folder": "Users",
 							"file": {
 								"value": "@concat(pipeline().parameters.table, '_', variables('current'))",
 								"type": "Expression"
