@@ -1,5 +1,5 @@
 {
-	"name": "ingestion_pipeline",
+	"name": "ingestion_pipeline_looping",
 	"properties": {
 		"activities": [
 			{
