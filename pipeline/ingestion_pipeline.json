@@ -342,7 +342,38 @@
 				"typeProperties": {
 					"method": "POST",
 					"url": "https://prod-37.eastus.logic.azure.com:443/workflows/a28965a7decb4a35be346895809d516f/triggers/When_an_HTTP_request_is_received/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FWhen_an_HTTP_request_is_received%2Frun&sv=1.0&sig=XkCogCX2tTrcGbS6CV85KhOyH0PrsnLdTyP8kAlzr1U",
-					"body": "PIPELINE FAILURE"
+					"body": {
+						"value": "{\n    \"pipeline_name\" : @{pipeline().Pipeline},\n    \"pipeline_runId\" : @{pipeline().RunId}\n}",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "Pipeline_success",
+				"type": "WebActivity",
+				"dependsOn": [
+					{
+						"activity": "ForEach1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"method": "POST",
+					"url": "https://prod-38.eastus.logic.azure.com:443/workflows/6f5f6768c4424c7d9f6f6f34ad49ca53/triggers/When_an_HTTP_request_is_received/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FWhen_an_HTTP_request_is_received%2Frun&sv=1.0&sig=xH-hG9LKTVP5Llf_kBZ3QxDl_BoggdeAK-J58ulG7Vk",
+					"body": {
+						"value": "{\n    \"pipeline_name\" : @{pipeline().Pipeline},\n    \"pipeline_runId\" : @{pipeline().RunId}\n}",
+						"type": "Expression"
+					}
 				}
 			}
 		],
